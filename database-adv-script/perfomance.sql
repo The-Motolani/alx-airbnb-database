@@ -23,7 +23,10 @@ JOIN
 JOIN 
     properties p ON b.property_id = p.id
 JOIN 
-    payments pay ON b.id = pay.booking_id;
+    payments pay ON b.id = pay.booking_id
+WHERE 
+    b.status = 'confirmed'
+    AND pay.payment_status = 'completed';
 
 -- STEP 2: Analyze query performance
 EXPLAIN ANALYZE
