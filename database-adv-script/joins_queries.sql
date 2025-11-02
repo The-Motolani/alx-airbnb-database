@@ -20,7 +20,9 @@ FROM
 LEFT JOIN 
     reviews
 ON 
-    properties.id = reviews.property_id;
+    properties.id = reviews.property_id
+ORDER BY 
+    properties.id;
 
 SELECT 
     users.id AS user_id,
